@@ -16,7 +16,58 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        
+        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+        window?.windowScene = windowScene
+        window?.rootViewController = createTabbar()
+        window?.makeKeyAndVisible()
+        
+        configurationBar()
+    }
+    
+    func createNewsNC() -> UINavigationController {
+        let newsVC = NewsVC()
+        newsVC.tabBarItem = UITabBarItem(title: "News", image: UIImage(systemName: SFSymbols.news), tag: 0)
+        return UINavigationController(rootViewController: newsVC)
+    }
+    
+    func createArticlesNC() -> UINavigationController {
+        let articlesVC = ArticlesVC()
+        articlesVC.tabBarItem = UITabBarItem(title: "Articles", image: UIImage(systemName: SFSymbols.articles), tag: 1)
+        return UINavigationController(rootViewController: articlesVC)
+    }
+    /*
+    func createMoviesNC() -> UINavigationController {
+        let moviesVC = MoviesVC()
+        moviesVC.title = "Movies"
+        moviesVC.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 2)
+        return UINavigationController(rootViewController: moviesVC)
+    }
+    */
+    
+    func createBooksNC() -> UINavigationController {
+        let booksVC = BooksVC()
+        booksVC.tabBarItem = UITabBarItem(title: "Books", image: UIImage(systemName: SFSymbols.books), tag: 2)
+        //booksVC.tabBarItem = UITabBarItem(title: "News", image: UIImage(systemName: SFSymbols.book), selectedImage: UIImage(systemName: SFSymbols.bookFill))
+        return UINavigationController(rootViewController: booksVC)
+    }
+
+    func createSettingsNC() -> UINavigationController {
+        let settingsVC = SettingsVC()
+        settingsVC.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(systemName: SFSymbols.settings), tag: 3)
+        return UINavigationController(rootViewController: settingsVC)
+    }
+    
+    func createTabbar() -> UITabBarController {
+        let tabbar = UITabBarController()
+        UITabBar.appearance().tintColor = .systemGray
+        tabbar.viewControllers = [createNewsNC(), createArticlesNC(), createBooksNC(), createSettingsNC()]
+        return tabbar
+    }
+    
+    func configurationBar() {
+        UINavigationBar.appearance().tintColor = .systemRed
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
