@@ -7,7 +7,12 @@
 
 import Foundation
 
-struct News: Codable, Hashable {
+struct News: Codable, Hashable, Identifiable {
+    
+    var id = UUID()
+    
+    private enum CodingKeys : String, CodingKey { case status, copyright, results }
+    
     let status: String
     let copyright: String
     let results: [Results]
@@ -23,5 +28,5 @@ struct Results: Codable, Hashable {
 }
 
 struct Multimedia: Codable, Hashable {
-    let url: String
+    let url: String?
 }

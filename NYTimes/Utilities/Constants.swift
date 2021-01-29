@@ -14,3 +14,7 @@ enum SFSymbols {
     static let settings = "gear"
     static let articles = "text.justify"
 }
+
+enum Images {
+    static let newsThumbnail = "NYTThumbnail"
+}
