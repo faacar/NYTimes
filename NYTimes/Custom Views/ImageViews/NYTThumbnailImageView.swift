@@ -27,6 +27,4 @@ class NYTThumbnailImageView: UIImageView {
         image = placeHolderImage
         translatesAutoresizingMaskIntoConstraints = false
     }
-
-
 }

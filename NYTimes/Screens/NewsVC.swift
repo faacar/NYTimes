@@ -22,6 +22,7 @@ class NewsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewController()
+        addNavBarImage()
         configureTableView()
         getNews()
         configureDataSource()
@@ -30,7 +31,15 @@ class NewsVC: UIViewController {
     private func configureViewController() {
         view.backgroundColor = .systemOrange
         navigationController?.isNavigationBarHidden = false
-        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.prefersLargeTitles = false
+        
+    }
+    
+    private func addNavBarImage() {
+        let logo = UIImage(named: Images.navigationBarLogo)
+        let imageView = UIImageView(image: logo)
+        imageView.contentMode = .center
+        navigationItem.titleView = imageView
     }
     
     private func configureTableView() {
@@ -61,9 +70,9 @@ class NewsVC: UIViewController {
         dataSource = UITableViewDiffableDataSource<Section, Results>(tableView: tableView, cellProvider: { (tableView, indexPath, results) -> UITableViewCell? in
             let cell = tableView.dequeueReusableCell(withIdentifier: NewsCell.cellId, for: indexPath) as! NewsCell
             cell.set(results: results)
-            print("indexPath:\(indexPath)")
+            //print("indexPath:\(indexPath)")
 
-            print("configureDatasource News:\(results)")
+            //print("configureDatasource News:\(results)")
             return cell
         })
         

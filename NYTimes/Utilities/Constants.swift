@@ -17,4 +17,5 @@ enum SFSymbols {
 
 enum Images {
     static let newsThumbnail = "NYTThumbnail"
+    static let navigationBarLogo = "NYTNavigationBarLogo"
 }

@@ -11,9 +11,9 @@ class NewsCell: UITableViewCell {
     static let cellId = "NewsCell"
     
     let thumbnailImage = NYTThumbnailImageView(frame: .zero)
-    let titleLabel = NYTTitleLabel(fontSize: 19) // content title label
-    let sectionLabel = NYTBodyLabel(textAlignment: .left, fontSize: 14) // section category label
-    let dateLabel = NYTSubheadLabel(textAlignment: .right, fontSize: 10) // date label
+    let titleLabel = NYTTitleLabel(fontSize: 18) // content title label
+    let sectionLabel = NYTBodyLabel(textAlignment: .left, fontSize: 12) // section category label
+    let dateLabel = NYTSubheadLabel(textAlignment: .right, fontSize: 9) // date label
     let stackView = UIStackView()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -30,9 +30,9 @@ class NewsCell: UITableViewCell {
         
         titleLabel.text = results.title
         sectionLabel.text = results.section
-        dateLabel.text = results.publishedDate
+        dateLabel.text = results.publishedDate.convertToDisplayFormat()
         
-        if let safeImage = results.multimedia?[0].url {
+        if let safeImage = results.multimedia?[2].url {
             NetworkManager.shared.downloadImage(from: safeImage) { [weak self] (image) in
                 DispatchQueue.main.async { self?.thumbnailImage.image = image }
             }
@@ -45,38 +45,36 @@ class NewsCell: UITableViewCell {
     private func configureStackView() {
         stackView.axis = .horizontal
         stackView.distribution = .equalSpacing
-        stackView.spacing = 20
+        //stackView.spacing = 2
         
         stackView.addArrangedSubview(sectionLabel)
         stackView.addArrangedSubview(dateLabel)
     }
     
     private func configure() {
-        
         addSubview(thumbnailImage)
-        addSubview(titleLabel)
         addSubview(stackView)
+        addSubview(titleLabel)
         
-        let padding: CGFloat = 6.0
-        translatesAutoresizingMaskIntoConstraints = false
+        let padding: CGFloat = 8.0
+        stackView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            thumbnailImage.topAnchor.constraint(equalTo: contentView.topAnchor),
-            thumbnailImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            //thumbnailImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            thumbnailImage.trailingAnchor.constraint(lessThanOrEqualTo: contentView.trailingAnchor),
-            //thumbnailImage.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.65),
-            thumbnailImage.heightAnchor.constraint(equalToConstant: 180),
+            thumbnailImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: padding),
+            thumbnailImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),
+            thumbnailImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -padding),
+            thumbnailImage.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.65),
             
-            titleLabel.topAnchor.constraint(equalTo: thumbnailImage.bottomAnchor, constant: padding),
-            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            titleLabel.heightAnchor.constraint(equalToConstant: 20),
+            stackView.topAnchor.constraint(equalTo: thumbnailImage.bottomAnchor, constant: padding),
+            stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),
+            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -padding),
+            stackView.heightAnchor.constraint(equalToConstant: 20),
             
-            stackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: padding),
-            stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: padding)
+            titleLabel.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: padding / 2),
+            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),
+            titleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -padding),
+            titleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+            
         ])
     }
     

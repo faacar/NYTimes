@@ -27,6 +27,7 @@ class NYTTitleLabel: UILabel {
     private func configure() {
         text = "Test text"
         textColor = .label
+        numberOfLines = 0
         textAlignment = .left
         adjustsFontSizeToFitWidth = true
         minimumScaleFactor = 0.9

@@ -11,7 +11,7 @@ class NetworkManager {
     
     static let shared = NetworkManager()
     private let newsBaseURL = "https://api.nytimes.com/svc/news/v3/content/all/all.json"
-    private let apiKey = "lpFTUcLHsCC7r5sprgGGdzyhfA22GZ80"
+    private let apiKey = "YOUR API KEY"
     let cache = NSCache<NSString, UIImage>()
     
     private init () { }

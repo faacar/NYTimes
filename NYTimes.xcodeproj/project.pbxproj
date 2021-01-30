@@ -26,6 +26,8 @@
 		7218A62025BDBA840075B880 /* NYTThumbnailImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7218A61F25BDBA840075B880 /* NYTThumbnailImageView.swift */; };
 		7218A62325BDBAC90075B880 /* NYTBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7218A62225BDBAC90075B880 /* NYTBodyLabel.swift */; };
 		7218A62625BDBAD70075B880 /* NYTSubheadLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7218A62525BDBAD70075B880 /* NYTSubheadLabel.swift */; };
+		728F262525C589B200D86FC9 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728F262425C589B200D86FC9 /* String+Ext.swift */; };
+		728F262825C589DE00D86FC9 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728F262725C589DE00D86FC9 /* Date+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		7218A61F25BDBA840075B880 /* NYTThumbnailImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYTThumbnailImageView.swift; sourceTree = "<group>"; };
 		7218A62225BDBAC90075B880 /* NYTBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYTBodyLabel.swift; sourceTree = "<group>"; };
 		7218A62525BDBAD70075B880 /* NYTSubheadLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYTSubheadLabel.swift; sourceTree = "<group>"; };
+		728F262425C589B200D86FC9 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		728F262725C589DE00D86FC9 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,7 @@
 				7218A60C25BC84D30075B880 /* Managers */,
 				7218A60725BC64980075B880 /* Model */,
 				7218A60325BC647B0075B880 /* Utilities */,
+				728F262A25C589E700D86FC9 /* Extensions */,
 				7218A62825BDBADF0075B880 /* Custom Views */,
 				7218A5FD25BC59AF0075B880 /* Screens */,
 				7218A5DD25BC52570075B880 /* Assets.xcassets */,
@@ -170,6 +175,15 @@
 			path = ImageViews;
 			sourceTree = "<group>";
 		};
+		728F262A25C589E700D86FC9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				728F262425C589B200D86FC9 /* String+Ext.swift */,
+				728F262725C589DE00D86FC9 /* Date+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -239,6 +253,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				728F262525C589B200D86FC9 /* String+Ext.swift in Sources */,
 				7218A5DC25BC52540075B880 /* NYTimes.xcdatamodeld in Sources */,
 				7218A5EC25BC56100075B880 /* NewsVC.swift in Sources */,
 				7218A5D225BC52540075B880 /* AppDelegate.swift in Sources */,
@@ -247,6 +262,7 @@
 				7218A61D25BDBA240075B880 /* NYTTitleLabel.swift in Sources */,
 				7218A62325BDBAC90075B880 /* NYTBodyLabel.swift in Sources */,
 				7218A5D425BC52540075B880 /* SceneDelegate.swift in Sources */,
+				728F262825C589DE00D86FC9 /* Date+Ext.swift in Sources */,
 				7218A62025BDBA840075B880 /* NYTThumbnailImageView.swift in Sources */,
 				7218A62625BDBAD70075B880 /* NYTSubheadLabel.swift in Sources */,
 				7218A5F825BC575E0075B880 /* SettingsVC.swift in Sources */,
