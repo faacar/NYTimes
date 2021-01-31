@@ -41,6 +41,13 @@
 	<true/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Domine-Bold.ttf</string>
+		<string>Domine-Medium.ttf</string>
+		<string>Domine-Regular.ttf</string>
+		<string>Domine-SemiBold.ttf</string>
+	</array>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

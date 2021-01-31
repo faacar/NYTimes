@@ -20,7 +20,9 @@ class NYTTitleLabel: UILabel {
     
     init(fontSize: CGFloat) {
         super.init(frame: .zero)
-        self.font = UIFont.monospacedSystemFont(ofSize: fontSize, weight: .semibold)
+        if let customFont = UIFont(name: Fonts.domineMedium, size: fontSize) {
+            self.font = UIFontMetrics(forTextStyle: .title1).scaledFont(for: customFont)
+        }
         configure()
     }
     

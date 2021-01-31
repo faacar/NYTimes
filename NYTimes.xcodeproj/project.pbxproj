@@ -28,6 +28,11 @@
 		7218A62625BDBAD70075B880 /* NYTSubheadLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7218A62525BDBAD70075B880 /* NYTSubheadLabel.swift */; };
 		728F262525C589B200D86FC9 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728F262425C589B200D86FC9 /* String+Ext.swift */; };
 		728F262825C589DE00D86FC9 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728F262725C589DE00D86FC9 /* Date+Ext.swift */; };
+		728F263925C5A6C200D86FC9 /* Domine-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 728F263625C5A6B100D86FC9 /* Domine-Regular.ttf */; };
+		728F263A25C5A6C200D86FC9 /* Domine-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 728F263525C5A6B000D86FC9 /* Domine-Medium.ttf */; };
+		728F263B25C5A6C200D86FC9 /* Domine-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 728F263725C5A6B100D86FC9 /* Domine-Bold.ttf */; };
+		728F263C25C5A6C200D86FC9 /* Domine-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 728F263825C5A6B100D86FC9 /* Domine-SemiBold.ttf */; };
+		728F263F25C5ADAE00D86FC9 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728F263E25C5ADAE00D86FC9 /* FooterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +59,11 @@
 		7218A62525BDBAD70075B880 /* NYTSubheadLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYTSubheadLabel.swift; sourceTree = "<group>"; };
 		728F262425C589B200D86FC9 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		728F262725C589DE00D86FC9 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
+		728F263525C5A6B000D86FC9 /* Domine-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Domine-Medium.ttf"; sourceTree = "<group>"; };
+		728F263625C5A6B100D86FC9 /* Domine-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Domine-Regular.ttf"; sourceTree = "<group>"; };
+		728F263725C5A6B100D86FC9 /* Domine-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Domine-Bold.ttf"; sourceTree = "<group>"; };
+		728F263825C5A6B100D86FC9 /* Domine-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Domine-SemiBold.ttf"; sourceTree = "<group>"; };
+		728F263E25C5ADAE00D86FC9 /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +96,7 @@
 		7218A5D025BC52540075B880 /* NYTimes */ = {
 			isa = PBXGroup;
 			children = (
+				728F263225C5A63100D86FC9 /* Resources */,
 				7218A5D125BC52540075B880 /* AppDelegate.swift */,
 				7218A5D325BC52540075B880 /* SceneDelegate.swift */,
 				7218A60C25BC84D30075B880 /* Managers */,
@@ -150,6 +161,7 @@
 		7218A62825BDBADF0075B880 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				728F263E25C5ADAE00D86FC9 /* FooterView.swift */,
 				7218A62925BDBAF70075B880 /* Labels */,
 				7218A62C25BDBB060075B880 /* ImageViews */,
 				7218A61925BDB91E0075B880 /* Cells */,
@@ -182,6 +194,25 @@
 				728F262725C589DE00D86FC9 /* Date+Ext.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		728F263225C5A63100D86FC9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				728F263325C5A65200D86FC9 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		728F263325C5A65200D86FC9 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				728F263725C5A6B100D86FC9 /* Domine-Bold.ttf */,
+				728F263525C5A6B000D86FC9 /* Domine-Medium.ttf */,
+				728F263625C5A6B100D86FC9 /* Domine-Regular.ttf */,
+				728F263825C5A6B100D86FC9 /* Domine-SemiBold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,7 +273,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				7218A5E125BC52570075B880 /* LaunchScreen.storyboard in Resources */,
+				728F263C25C5A6C200D86FC9 /* Domine-SemiBold.ttf in Resources */,
+				728F263925C5A6C200D86FC9 /* Domine-Regular.ttf in Resources */,
 				7218A5DE25BC52570075B880 /* Assets.xcassets in Resources */,
+				728F263B25C5A6C200D86FC9 /* Domine-Bold.ttf in Resources */,
+				728F263A25C5A6C200D86FC9 /* Domine-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +301,7 @@
 				7218A62025BDBA840075B880 /* NYTThumbnailImageView.swift in Sources */,
 				7218A62625BDBAD70075B880 /* NYTSubheadLabel.swift in Sources */,
 				7218A5F825BC575E0075B880 /* SettingsVC.swift in Sources */,
+				728F263F25C5ADAE00D86FC9 /* FooterView.swift in Sources */,
 				7218A5F525BC57190075B880 /* BooksVC.swift in Sources */,
 				7218A5F225BC56D10075B880 /* MoviesVC.swift in Sources */,
 				7218A60525BC648E0075B880 /* News.swift in Sources */,
