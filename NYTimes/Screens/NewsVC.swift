@@ -14,10 +14,10 @@ class NewsVC: UIViewController {
         case main
     }
     
-    var results: [Results] = []
+    var results: [NewsResults] = []
     
     var tableView: UITableView!
-    var dataSource: UITableViewDiffableDataSource<Section, Results>!
+    var dataSource: UITableViewDiffableDataSource<Section, NewsResults>!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,13 +34,10 @@ class NewsVC: UIViewController {
         updateFooterViewHeight(for: tableView.tableFooterView)
     }
     
-
-    
     private func configureViewController() {
         view.backgroundColor = .systemOrange
         navigationController?.isNavigationBarHidden = false
         navigationController?.navigationBar.prefersLargeTitles = false
-        
     }
     
     private func addNavBarImage() {
@@ -86,20 +83,18 @@ class NewsVC: UIViewController {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let linkItem = self.dataSource.itemIdentifier(for: indexPath) else { return }
 
-
-        if let url = URL(string: linkItem.url) {
+        guard let url = URL(string: linkItem.url) else { return }
             let vc = SFSafariViewController(url: url)
             print(url)
             vc.delegate = self
 
             present(vc, animated: true)
-        }
     }
     
     //MARK: - DiffableDataSource
     
     func configureDataSource() {
-        dataSource = UITableViewDiffableDataSource<Section, Results>(tableView: tableView, cellProvider: { (tableView, indexPath, results) -> UITableViewCell? in
+        dataSource = UITableViewDiffableDataSource<Section, NewsResults>(tableView: tableView, cellProvider: { (tableView, indexPath, results) -> UITableViewCell? in
             let cell = tableView.dequeueReusableCell(withIdentifier: NewsCell.cellId, for: indexPath) as! NewsCell
             cell.set(results: results)
             
@@ -108,8 +103,8 @@ class NewsVC: UIViewController {
         
     }
     
-    func updateData(on results: [Results]) {
-        var snapshot = NSDiffableDataSourceSnapshot<Section, Results>()
+    func updateData(on results: [NewsResults]) {
+        var snapshot = NSDiffableDataSourceSnapshot<Section, NewsResults>()
         snapshot.appendSections([.main])
         snapshot.appendItems(results)
         DispatchQueue.main.async { self.dataSource.apply(snapshot, animatingDifferences: true) }

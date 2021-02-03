@@ -33,6 +33,8 @@
 		728F263B25C5A6C200D86FC9 /* Domine-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 728F263725C5A6B100D86FC9 /* Domine-Bold.ttf */; };
 		728F263C25C5A6C200D86FC9 /* Domine-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 728F263825C5A6B100D86FC9 /* Domine-SemiBold.ttf */; };
 		728F263F25C5ADAE00D86FC9 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728F263E25C5ADAE00D86FC9 /* FooterView.swift */; };
+		729769F725CAD60D00243F32 /* Books.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729769F625CAD60D00243F32 /* Books.swift */; };
+		729769FB25CB011200243F32 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729769FA25CB011200243F32 /* ListCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +66,8 @@
 		728F263725C5A6B100D86FC9 /* Domine-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Domine-Bold.ttf"; sourceTree = "<group>"; };
 		728F263825C5A6B100D86FC9 /* Domine-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Domine-SemiBold.ttf"; sourceTree = "<group>"; };
 		728F263E25C5ADAE00D86FC9 /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
+		729769F625CAD60D00243F32 /* Books.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Books.swift; sourceTree = "<group>"; };
+		729769FA25CB011200243F32 /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,10 +121,10 @@
 			isa = PBXGroup;
 			children = (
 				7218A5EB25BC56100075B880 /* NewsVC.swift */,
+				7218A5F425BC57190075B880 /* BooksVC.swift */,
 				7218A5EE25BC569A0075B880 /* ArticlesVC.swift */,
 				7218A5F125BC56D10075B880 /* MoviesVC.swift */,
 				7218A5F725BC575E0075B880 /* SettingsVC.swift */,
-				7218A5F425BC57190075B880 /* BooksVC.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -138,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				7218A60425BC648E0075B880 /* News.swift */,
+				729769F625CAD60D00243F32 /* Books.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -154,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				7218A61625BDB91B0075B880 /* NewsCell.swift */,
+				729769FA25CB011200243F32 /* ListCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -291,6 +297,7 @@
 				728F262525C589B200D86FC9 /* String+Ext.swift in Sources */,
 				7218A5DC25BC52540075B880 /* NYTimes.xcdatamodeld in Sources */,
 				7218A5EC25BC56100075B880 /* NewsVC.swift in Sources */,
+				729769F725CAD60D00243F32 /* Books.swift in Sources */,
 				7218A5D225BC52540075B880 /* AppDelegate.swift in Sources */,
 				7218A5EF25BC569A0075B880 /* ArticlesVC.swift in Sources */,
 				7218A60925BC84CB0075B880 /* NetworkManager.swift in Sources */,
@@ -304,6 +311,7 @@
 				728F263F25C5ADAE00D86FC9 /* FooterView.swift in Sources */,
 				7218A5F525BC57190075B880 /* BooksVC.swift in Sources */,
 				7218A5F225BC56D10075B880 /* MoviesVC.swift in Sources */,
+				729769FB25CB011200243F32 /* ListCell.swift in Sources */,
 				7218A60525BC648E0075B880 /* News.swift in Sources */,
 				7218A61025BC85BD0075B880 /* NetworkingError.swift in Sources */,
 				7218A61725BDB91B0075B880 /* NewsCell.swift in Sources */,

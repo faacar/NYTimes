@@ -26,7 +26,7 @@ class NewsCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func set(results: Results) {
+    func set(results: NewsResults) {
         
         titleLabel.text = results.title
         sectionLabel.text = results.section

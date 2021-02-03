@@ -15,10 +15,10 @@ struct News: Codable, Hashable, Identifiable {
     
     let status: String
     let copyright: String
-    let results: [Results]
+    let results: [NewsResults]
 }
 
-struct Results: Codable, Hashable {
+struct NewsResults: Codable, Hashable {
     let section: String
     let title: String
     let url: String
