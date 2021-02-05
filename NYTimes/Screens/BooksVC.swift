@@ -31,9 +31,37 @@ class BooksVC: UIViewController, UITableViewDelegate {
         super.viewWillLayoutSubviews()
         updateFooterViewHeight(for: tableView.tableFooterView)
     }
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        /*
+            // moved to top
+            print("move Up\(scrollView.contentOffset.y)")
+            print("alpha\(Float(scrollView.contentOffset.y / 166))")
+            navigationController?.navigationBar.alpha = scrollView.contentOffset.y / 166
+            if Float(scrollView.contentOffset.y / 166) >= 1.0 {
+
+                    self.navigationController?.navigationBar.isTranslucent = false
+
+                    }
+
+            // moved to bottom
+
+            navigationController?.navigationBar.alpha = scrollView.contentOffset.y / 166
+            print("alpha\(Float(scrollView.contentOffset.y / 166))")
+            print("move down\(scrollView.contentOffset.y)")
+*/
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let linkItem = self.dataSource.itemIdentifier(for: indexPath) else { return }
+        print(linkItem)
+    }
     
     private func configureViewController() {
-        
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: UIColor.black, .font: UIFont(name: Fonts.domineBold, size: 45.0)!]
+        navigationController?.title = "Category"
+        navigationItem.title = "Category"
     }
     
     private func addNavBarImage() {
@@ -44,9 +72,11 @@ class BooksVC: UIViewController, UITableViewDelegate {
     }
     
     private func configureTableView() {
-        
-
- 
+        tableView = UITableView(frame: view.bounds)
+        tableView.rowHeight = 200
+        tableView.delegate = self
+        view.addSubview(tableView)
+        tableView.register(ListCell.self, forCellReuseIdentifier: ListCell.cellId)
     }
     
     private func configureCustomFooter() {

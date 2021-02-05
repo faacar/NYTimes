@@ -20,18 +20,18 @@ struct BookResults: Codable, Hashable {
 struct BookLists: Codable, Hashable {
     let listNameEncoded: String
     let displayName: String
-    let listImage: String
-  //  let books: [BookInfo]
+    let listImage: String?
+    let books: [BookInfo]?
 }
-/*
+
 struct BookInfo: Codable, Hashable {
     let author: String
     let bookImage: String
     let createdDate: String
     let description: String
     let publisher: String
-    let rankLastWeek: String
-    let rank: String
+    let rankLastWeek: Int?
+    let rank: Int
     let buyLinks: [BuyLinks]
 }
 
@@ -39,4 +39,5 @@ struct BuyLinks: Codable, Hashable {
     let name: String
     let url: String
 }
-*/
+
+
