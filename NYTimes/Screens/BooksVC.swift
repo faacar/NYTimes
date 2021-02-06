@@ -22,7 +22,7 @@ class BooksVC: UIViewController, UITableViewDelegate {
         configureViewController()
         addNavBarImage()
         configureTableView()
-        getBooks()
+        getLists()
         configureDataSource()
         configureCustomFooter()
     }
@@ -53,8 +53,13 @@ class BooksVC: UIViewController, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let linkItem = self.dataSource.itemIdentifier(for: indexPath) else { return }
-        print(linkItem)
+        guard let bookList = self.dataSource.itemIdentifier(for: indexPath) else { return }
+        let destinationVC = BookListVC()
+        destinationVC.bookList = bookList.books! // can be throw error
+        
+        //let navigationController = UINavigationController(rootViewController: destinationVC)
+        //present(navigationController, animated: true, completion: nil)
+        navigationController?.pushViewController(destinationVC, animated: true)        
     }
     
     private func configureViewController() {
@@ -89,8 +94,8 @@ class BooksVC: UIViewController, UITableViewDelegate {
         footer.frame.size.height = footer.systemLayoutSizeFitting(CGSize(width: view.bounds.width - 16.0, height: 0)).height
     }
     
-    private func getBooks() {
-        NetworkManager.shared.getBooks { result in
+    private func getLists() {
+        NetworkManager.shared.getLists { result in
             
             switch result {
             case .success(let books):
@@ -109,7 +114,7 @@ class BooksVC: UIViewController, UITableViewDelegate {
         dataSource = UITableViewDiffableDataSource<Section, BookLists>(tableView: tableView, cellProvider: { (tableView, indexPath, bookLists) -> UITableViewCell? in
             let cell = tableView.dequeueReusableCell(withIdentifier: ListCell.cellId) as! ListCell
             cell.set(lists: bookLists)
-            
+
             return cell
         })
     }

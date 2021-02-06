@@ -7,11 +7,12 @@
 
 import Foundation
 
-struct News: Codable, Hashable, Identifiable {
-    
+struct News: Codable, Hashable {
+    /*
     var id = UUID()
     
     private enum CodingKeys : String, CodingKey { case status, copyright, results }
+    */
     
     let status: String
     let copyright: String

@@ -27,3 +27,7 @@ enum Fonts {
     static let domineRegular = "Domine-Regular"
     static let domineSemiBold = "Domine-SemiBold"
 }
+
+enum Colors {
+    static let blackToWhite = "blackToWhite"
+}

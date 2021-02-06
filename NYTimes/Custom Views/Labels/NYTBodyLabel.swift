@@ -29,7 +29,8 @@ class NYTBodyLabel: UILabel {
     
     private func configure() {
         text = "Test text"
-        textColor = .secondaryLabel
+        numberOfLines = 0
+        textColor = .darkGray
         adjustsFontSizeToFitWidth = true
         font = UIFont.preferredFont(forTextStyle: .body)
         minimumScaleFactor = 0.75

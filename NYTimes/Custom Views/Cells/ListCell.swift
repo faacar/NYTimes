@@ -27,7 +27,6 @@ class ListCell: UITableViewCell {
         listCategoryTitle.text = bookLists.displayName
         
         if let safeImage = bookLists.listImage {
-            print(safeImage)
             NetworkManager.shared.downloadImage(from: safeImage) { (image) in
                 DispatchQueue.main.async { self.categoryBookThumbnail.image = image }
             }

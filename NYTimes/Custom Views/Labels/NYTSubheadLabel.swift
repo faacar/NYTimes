@@ -29,11 +29,11 @@ class NYTSubheadLabel: UILabel {
     
     private func configure() {
         text = "No text"
-        textColor = .systemGray2
-        adjustsFontSizeToFitWidth = true
+        textColor = .systemGray
+        adjustsFontSizeToFitWidth = false
         font = UIFont.preferredFont(forTextStyle: .body)
-        minimumScaleFactor = 0.65
-        lineBreakMode = .byWordWrapping
+        //minimumScaleFactor = 0.65
+        lineBreakMode = .byTruncatingTail
         translatesAutoresizingMaskIntoConstraints = false
     }
 }
