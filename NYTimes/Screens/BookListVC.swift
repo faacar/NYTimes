@@ -70,6 +70,17 @@ class BookListVC: UIViewController, UITableViewDelegate {
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let destinationVC = BookInfoVC()
+        destinationVC.bookInfo = bookList[indexPath.row]
+        
+        let navigationController = UINavigationController(rootViewController: destinationVC)
+        present(navigationController, animated: true, completion: nil)
+        
+        //navigationController?.pushViewController(destinationVC, animated: true)
+        
+    }
+    
     //MARK: - DiffableDataSource
     
     private func configureDataSource() {

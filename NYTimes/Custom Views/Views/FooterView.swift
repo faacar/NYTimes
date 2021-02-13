@@ -9,7 +9,7 @@ import UIKit
 
 class FooterView: UIView {
     
-    let apiButton = UIButton()
+    lazy var apiButton = UIButton()
     let url = "https://developer.nytimes.com/"
     
     override init(frame: CGRect) {

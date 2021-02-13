@@ -19,6 +19,7 @@ enum Images {
     static let newsThumbnail = "NYTThumbnail"
     static let navigationBarLogo = "NYTNavigationBarLogo"
     static let copyRightImages = "NYTDataProvide"
+    //static let bookBackgroundImage = "BookBackgroundImage"
 }
 
 enum Fonts {
