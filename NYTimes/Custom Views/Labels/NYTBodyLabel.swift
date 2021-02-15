@@ -35,6 +35,7 @@ class NYTBodyLabel: UILabel {
         font = UIFont.preferredFont(forTextStyle: .body)
         minimumScaleFactor = 0.75
         lineBreakMode = .byWordWrapping
+        sizeToFit()
         translatesAutoresizingMaskIntoConstraints = false
     }
 }

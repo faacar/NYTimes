@@ -32,7 +32,7 @@ class BookInfoView: UIView {
     
     init(bookInfo: BookInfo) {
         super.init(frame: .zero)
-        print("BookInfoView init'e girdi")
+        
         titleLabel.text = bookInfo.title
         descriptionLabel.text = bookInfo.description
         authorName = bookInfo.author
@@ -47,14 +47,11 @@ class BookInfoView: UIView {
     }
     
     private func configureUI() {
-        addSubview(titleLabel)
-        titleLabel.backgroundColor = .yellow
-        addSubview(descriptionLabel)
-        descriptionLabel.backgroundColor = .white
         
-        stackView.backgroundColor = .blue
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
+        addSubview(titleLabel)
+        addSubview(descriptionLabel)
         addSubview(stackView)
         
         let padding: CGFloat = 8
@@ -68,7 +65,7 @@ class BookInfoView: UIView {
             descriptionLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: padding),
             descriptionLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -padding),
             descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
-            descriptionLabel.heightAnchor.constraint(equalToConstant: 180),
+            descriptionLabel.heightAnchor.constraint(equalToConstant: 100),
             
             stackView.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor),
             stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: padding),
@@ -93,8 +90,4 @@ class BookInfoView: UIView {
         stackView.addArrangedSubview(rankLastWeekStack)
         stackView.addArrangedSubview(rankStack)
     }
-    
-    
-    
-    
 }

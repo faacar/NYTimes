@@ -32,3 +32,12 @@ enum Fonts {
 enum Colors {
     static let blackToWhite = "blackToWhite"
 }
+
+enum Logos {
+    static let amazon = "amazonLogo"
+    static let appleBooks = "appleBooksLogo"
+    static let booksAMillion = "bamLogo"
+    static let barnesAndNoble = "barnesLogo"
+    static let bookShop = "bookShopLogo"
+    static let indeBound = "indieBoundLogo"
+}
