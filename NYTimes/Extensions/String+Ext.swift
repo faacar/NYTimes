@@ -9,9 +9,9 @@ import Foundation
 
 extension String {
     
-    func convertToDate() -> Date? {
+    func convertToNewsDate(stringDate: String) -> Date? {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        dateFormatter.dateFormat = stringDate
         dateFormatter.locale = Locale(identifier: "en")
         dateFormatter.timeZone = .current
         
@@ -19,7 +19,18 @@ extension String {
     }
     
     func convertToDisplayFormat() -> String {
-        guard let date = self.convertToDate() else { return "N/A"}
+        
+        if let date = self.convertToNewsDate(stringDate: "yyyy-MM-dd'T'HH:mm:ssZ") {
+            return date.convertToMonthYearFormat()
+        } else if let date = self.convertToNewsDate(stringDate: "yyyy-MM-dd HH:mm:ss") {
+            return date.convertToMonthYearFormat()
+        } else {
+            return "N/A"
+        }
+        
+        /*
+        guard let date = self.convertToNewsDate(stringDate: "yyyy-MM-dd'T'HH:mm:ssZ") else { return "N/A"}
         return date.convertToMonthYearFormat()
+         */
     }
 }

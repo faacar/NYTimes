@@ -9,8 +9,8 @@ import UIKit
 
 class NYTStackView: UIStackView {
     
-    let leftLabel = NYTTitleLabel(fontSize: 12)
-    let rightLabel = NYTBodyLabel(textAlignment: .left, fontSize: 18)
+    let leftLabel = NYTTitleLabel(fontSize: 14)
+    let rightLabel = NYTBodyLabel(textAlignment: .left, fontSize: 17)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -34,9 +34,10 @@ class NYTStackView: UIStackView {
     private func configureUI() {
         translatesAutoresizingMaskIntoConstraints = false
         
-        backgroundColor = .systemBackground
-        leftLabel.backgroundColor = .red
-        rightLabel.backgroundColor = .yellow
+        backgroundColor = Colors.backgroundColor
+        leftLabel.backgroundColor = .systemBackground
+        rightLabel.backgroundColor = .systemBackground
+        
         axis = .vertical
         addSubview(rightLabel)
         addSubview(leftLabel)
@@ -45,8 +46,6 @@ class NYTStackView: UIStackView {
             topAnchor.constraint(equalTo: self.topAnchor),
             leadingAnchor.constraint(equalTo: self.leadingAnchor),
             trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            //widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 9/10), //
-            //centerXAnchor.constraint(equalTo: self.centerXAnchor),
             heightAnchor.constraint(equalToConstant: 26),
             
             leftLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor), //

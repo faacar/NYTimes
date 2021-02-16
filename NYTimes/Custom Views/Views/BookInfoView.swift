@@ -10,8 +10,8 @@ import UIKit
 class BookInfoView: UIView {
 
     let stackView = UIStackView()
-    let titleLabel = NYTTitleLabel(fontSize: 14)
-    let descriptionLabel = NYTBodyLabel(textAlignment: .left, fontSize: 12)
+    let titleLabel = NYTTitleLabel(fontSize: 19)
+    let descriptionLabel = NYTBodyLabel(textAlignment: .left, fontSize: 14)
 
     var authorName: String!
     var createdDate: String!
@@ -36,9 +36,9 @@ class BookInfoView: UIView {
         titleLabel.text = bookInfo.title
         descriptionLabel.text = bookInfo.description
         authorName = bookInfo.author
-        createdDate = bookInfo.createdDate
+        createdDate = bookInfo.createdDate.convertToDisplayFormat()
         publisherName = bookInfo.publisher
-        rankLastWeek = String(format: "%d", bookInfo.rankLastWeek ?? "First Week")
+        rankLastWeek = bookInfo.rankLastWeek != 0 ? "\(bookInfo.rankLastWeek!)" : "First week in the list"
         rank = String(bookInfo.rank)
         
         
@@ -49,6 +49,9 @@ class BookInfoView: UIView {
     private func configureUI() {
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.textAlignment = .center
+        //stackView.backgroundColor = Colors.backgroundColor
+
         
         addSubview(titleLabel)
         addSubview(descriptionLabel)
@@ -67,10 +70,9 @@ class BookInfoView: UIView {
             descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
             descriptionLabel.heightAnchor.constraint(equalToConstant: 100),
             
-            stackView.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor),
+            stackView.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: padding),
             stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: padding),
             stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -padding),
-            //stackView.heightAnchor.constraint(equalToConstant: 26),
         ])
     }
     
@@ -89,5 +91,6 @@ class BookInfoView: UIView {
         stackView.addArrangedSubview(publisherNameStack)
         stackView.addArrangedSubview(rankLastWeekStack)
         stackView.addArrangedSubview(rankStack)
+        
     }
 }

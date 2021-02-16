@@ -5,7 +5,7 @@
 //  Created by Ahmet Acar on 23.01.2021.
 //
 
-import Foundation
+import UIKit
 
 enum SFSymbols {
     static let news = "tray.full"
@@ -31,6 +31,7 @@ enum Fonts {
 
 enum Colors {
     static let blackToWhite = "blackToWhite"
+    static let backgroundColor = UIColor(red: 0.33725491166114807, green: 0.48235294222831726, blue: 0.5843137502670288, alpha: 1.0)
 }
 
 enum Logos {

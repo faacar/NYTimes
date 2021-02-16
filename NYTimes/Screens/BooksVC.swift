@@ -53,12 +53,11 @@ class BooksVC: UIViewController, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         guard let bookList = self.dataSource.itemIdentifier(for: indexPath) else { return }
         let destinationVC = BookListVC()
         destinationVC.bookList = bookList.books! // can be throw error
         
-        //let navigationController = UINavigationController(rootViewController: destinationVC)
-        //present(navigationController, animated: true, completion: nil)
         navigationController?.pushViewController(destinationVC, animated: true)        
     }
     
