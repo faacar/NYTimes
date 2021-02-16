@@ -7,12 +7,12 @@ api link: https://developer.nytimes.com/
 ---
 
 ## Screenshots
-<img src="https://github.com/faacar/NYTimes/blob/master/newsView.png" width="200" img align="left">
-<img src="https://github.com/faacar/NYTimes/blob/master/newsSafariView.png" width="200" img align="left">
-<img src="https://github.com/faacar/NYTimes/blob/master/bookCategoryView.png" width="200" img align="left"><br/>
-<img src="https://github.com/faacar/NYTimes/blob/master/bookListView.png" width="200" img align="left">
-<img src="https://github.com/faacar/NYTimes/blob/master/bookInfoViewOne.png" width="200" img align="left">
-<img src="https://github.com/faacar/NYTimes/blob/master/bookInfoViewTwo.png" width="200" img align="left">
+<img src="https://github.com/faacar/NYTimes/blob/main/assets/newsView.png" width="200" img align="left">
+<img src="https://github.com/faacar/NYTimes/blob/main/assets/newsSafariView.png" width="200" img align="left">
+<img src="https://github.com/faacar/NYTimes/blob/main/assets/bookCategoryView.png" width="200" img align="left"><br/>
+<img src="https://github.com/faacar/NYTimes/blob/main/assets/bookListView.png" width="200" img align="left">
+<img src="https://github.com/faacar/NYTimes/blob/main/assets/bookInfoViewOne.png" width="200" img align="left">
+<img src="https://github.com/faacar/NYTimes/blob/main/assets/bookInfoViewTwo.png" width="200" img align="left">
 
 
-
+https://github.com/faacar/NYTimes/blob/main/assets/bookCategoryView.png
