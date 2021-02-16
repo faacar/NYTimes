@@ -13,6 +13,3 @@ api link: https://developer.nytimes.com/
 <img src="https://github.com/faacar/NYTimes/blob/main/assets/bookListView.png" width="200" img align="left">
 <img src="https://github.com/faacar/NYTimes/blob/main/assets/bookInfoViewOne.png" width="200" img align="left">
 <img src="https://github.com/faacar/NYTimes/blob/main/assets/bookInfoViewTwo.png" width="200" img align="left">
-
-
-https://github.com/faacar/NYTimes/blob/main/assets/bookCategoryView.png
